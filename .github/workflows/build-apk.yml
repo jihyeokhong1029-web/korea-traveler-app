@@ -1,4 +1,4 @@
-name: Build Android APK
+aname: Build Android APK
 
 on:
   push:
@@ -23,8 +23,8 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Android SDK 설정
-        uses: android-actions/setup-android@v3
+      - name: Android SDK 라이선스 동의
+        run: yes | sdkmanager --licenses || true
 
       - name: npm 의존성 설치
         run: npm install
